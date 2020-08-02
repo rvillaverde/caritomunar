@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import styled from 'styled-components'
-import { TypographyTitle1 } from '../components/theme/typography'
-import withAuth from '../utils/withAuth'
+import { TypographyTitle1 } from '../../components/theme/typography'
+import withAuth from '../../utils/withAuth'
 
 const Admin = () => {
   return (
