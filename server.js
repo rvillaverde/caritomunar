@@ -11,8 +11,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-
 const authRouter = require('./src/app/routes/authRouter.js')
+const userRouter = require('./src/app/routes/userRouter.js')
 
 app.prepare().then(() => {
   const server = express()
@@ -27,6 +27,7 @@ app.prepare().then(() => {
   server.use(bodyParser.urlencoded({ extended: true }))
 
   server.use('/api/auth', authRouter)
+  server.use('/api/users', userRouter)
 
   server.all('*', (req, res) => {
     return handle(req, res)

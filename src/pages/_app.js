@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import { AppProvider } from '../components/appContext'
 import { Provider } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
-import {MakeStore, createWrapper, Context, HYDRATE} from 'next-redux-wrapper';
+import {MakeStore, createWrapper, Context, HYDRATE} from 'next-redux-wrapper'
 import { store, persistor } from '../redux/store'
 import { PersistGate } from 'redux-persist/integration/react'
 import { REHYDRATE } from 'redux-persist'

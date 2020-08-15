@@ -2,12 +2,12 @@ import ApiClient from "./apiClient"
 
 const api = new ApiClient(process.env.API_ENDPOINT + 'api/auth', false)
 
-const login = (email, password) => {
+const login = (username, password) => {
   return api
     .post({
       endpoint: 'login',
       data: {
-        email,
+        username,
         password
       }
     })

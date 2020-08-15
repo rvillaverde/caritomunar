@@ -33,17 +33,18 @@ const Legend = styled(TypographyBody)`
 
 class Login extends React.Component {
   state = {
-    invalid: false
+    invalid: false,
   }
-  emailRef = React.createRef()
+
+  usernameRef = React.createRef()
   passwordRef = React.createRef()
 
   handleLogin = async (e) => {
     e.preventDefault()
-    const email = this.emailRef.current.value;
-    const password = this.passwordRef.current.value;
+    const username = this.usernameRef.current.value
+    const password = this.passwordRef.current.value
 
-    api.login(email, password)
+    api.login(username, password)
     .then(res => {
       this.props.login(res)
       this.setState({ invalid: false })
@@ -67,19 +68,21 @@ class Login extends React.Component {
             <FormRow>
               <FormField>
                 <FormInput
-                  ref={ this.emailRef }
-                  label="email"
-                  name="email"
-                  type="email" />
+                  ref={this.usernameRef}
+                  label="Username"
+                  name="username"
+                  type="text"
+                />
               </FormField>
             </FormRow>
             <FormRow>
               <FormField>
                 <FormInput
-                  ref={ this.passwordRef }
+                  ref={this.passwordRef}
                   label="Password"
                   name="password"
-                  type="password" />
+                  type="password"
+                />
               </FormField>
             </FormRow>
             { this.state.invalid && 
@@ -95,7 +98,7 @@ class Login extends React.Component {
   }
 }
 
-const mapStateToProps = function(state) {
+const mapStateToProps = (state) => {
   return {
     auth: state.auth
   }

@@ -1,21 +1,21 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import FormInput from './formInput'
 
-export const FormTitle = styled.div`
-
+const FormTitle = styled.div`
 ` 
-export const FormSection = styled.section`
+const FormSection = styled.section`
   display: flex;
 
   @media (max-width: 480px) {
     flex-direction: column;
   }
 `
-export const FormSubsection = styled.div`
+const FormSubsection = styled.div`
 `
-export const FormSubsectionLarge = styled.div`
+const FormSubsectionLarge = styled.div`
   flex: 1;
 `
-export const FormRow = styled.div`
+const FormRow = styled.div`
   display: flex;
   align-items: center;
   margin: 12px 0;
@@ -24,10 +24,7 @@ export const FormRow = styled.div`
     flex-wrap: wrap;
   }
 `
-export const FormInput = styled.input`
-  width: 100%;
-`
-export const FormField = styled.div`
+const FormField = styled.div`
   flex-grow: 1;
   margin: 0 8px;
   position: relative;
@@ -50,7 +47,7 @@ export const FormField = styled.div`
     }
   }
 `
-export const SmallFormField = styled(FormField)`
+const SmallFormField = styled(FormField)`
   && {
     max-width: 50%;
     flex-shrink: 1;
@@ -60,3 +57,14 @@ export const SmallFormField = styled(FormField)`
     }
   }
 `
+
+export {
+  FormTitle,
+  FormSection,
+  FormSubsection,
+  FormSubsectionLarge,
+  FormRow,
+  FormField,
+  SmallFormField,
+  FormInput
+}
