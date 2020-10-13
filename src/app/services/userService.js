@@ -3,11 +3,11 @@ const bcryptHelper = require('../helpers/bcryptHelper')
 
 class UserService {
   static getUsers = async () => {
-    return await UserDAO.getUsers()
+    return await UserDAO.fetchAll()
   }
 
   static getUser = async (id) => {
-    return await UserDAO.getUser(id)
+    return await UserDAO.findById(id)
   }
 
   static findByField = async (field) => {
@@ -16,7 +16,7 @@ class UserService {
 
   static createUser = async (user) => {
     const password = await bcryptHelper.encrypt(user.password)
-    return UserDAO.createUser({
+    return UserDAO.create({
       ...user,
       password
     }, { returning: true })

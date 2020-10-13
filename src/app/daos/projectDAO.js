@@ -1,9 +1,9 @@
 const models  = require('../models')
 
 module.exports = {
-  fetchAll: () => {
+    fetchAll: () => {
     return new Promise((resolve, reject) => {
-      models.User.findAll().then(users => {
+      models.Project.findAll().then(users => {
         resolve(users)
       }).catch(err => {
         reject(err)
@@ -12,8 +12,8 @@ module.exports = {
   },
   findById: (id) => {
     return new Promise((resolve, reject) => {
-      models.User.findByPk(id).then(user => {
-        resolve(user)
+      models.Project.findByPk(id).then(project => {
+        resolve(project)
       }).catch(err => {
         reject(err)
       })
@@ -21,7 +21,7 @@ module.exports = {
   },
   findByField: (field) => {
     return new Promise((resolve, reject) => {
-      models.User.findAll({
+      models.Project.findAll({
         where: field
       }).then(users => {
         resolve(users[0])
@@ -30,10 +30,10 @@ module.exports = {
       })
     })
   },
-  create: (user) => {
+  create: (project) => {
     return new Promise(async (resolve, reject) => {
-      models.User.create(user).then(user => {
-        resolve(user)
+      models.Project.create(project).then(project => {
+        resolve(project)
       }).catch(err => {
         reject(err)
       })

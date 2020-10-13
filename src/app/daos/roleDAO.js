@@ -1,7 +1,7 @@
 const models  = require('../models')
 
 module.exports = {
-  getRoles: () => {
+  fetchAll: () => {
     return new Promise((resolve, reject) => {
       models.Role.findAll().then(roles => {
         resolve(roles)
@@ -10,7 +10,7 @@ module.exports = {
       })
     })
   },
-  getRole: (id) => {
+  findById: (id) => {
     return new Promise((resolve, reject) => {
       models.Role.findByPk(id).then(role => {
         resolve(role)
@@ -30,7 +30,7 @@ module.exports = {
       })
     })
   },
-  createRole: (role) => {
+  create: (role) => {
     return new Promise(async (resolve, reject) => {
       models.Role.create(role).then(role => {
         resolve(role)
