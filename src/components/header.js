@@ -34,7 +34,7 @@ class AppHeader extends React.Component {
             <LogoSection>
               <Link href='/' as='/'>
                 <TypographySubtitle>
-                  Base project
+                  Carito Munar
                 </TypographySubtitle>
               </Link>
             </LogoSection>

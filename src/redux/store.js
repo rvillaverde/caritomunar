@@ -11,13 +11,13 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-let store = createStore(
+const store = createStore(
   persistedReducer,
   applyMiddleware(
     thunkMiddleware
   ));
 
-let persistor = persistStore(store)
+const persistor = persistStore(store)
 
 // const makeStore = (context) => createStore(reducer)
 

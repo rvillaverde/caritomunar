@@ -1,62 +1,68 @@
-import styled from 'styled-components'
 import FormInput from './formInput'
+import './style.scss'
 
-const FormTitle = styled.div`
-` 
-const FormSection = styled.section`
-  display: flex;
+const FormTitle = ({ children }) => {
+  return (
+    <div className='form-title'>
+      { children }
+    </div>
+  )
+}
 
-  @media (max-width: 480px) {
-    flex-direction: column;
-  }
-`
-const FormSubsection = styled.div`
-`
-const FormSubsectionLarge = styled.div`
-  flex: 1;
-`
-const FormRow = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 12px 0;
+const FormSection = ({ children }) => {
+  return (
+    <section className='form-section'>
+      { children }
+    </section>
+  )
+}
 
-  @media (max-width: 480px) {
-    flex-wrap: wrap;
-  }
-`
-const FormField = styled.div`
-  flex-grow: 1;
-  margin: 0 8px;
-  position: relative;
+const FormSubsection = ({ children }) => {
+  return (
+    <div className='form-subsection'>
+      { children }
+    </div>
+  )
+}
 
-  &:first-child {
-    margin-left: 0;
-  }
+const FormSubsectionLarge = ({ children }) => {
+  return (
+    <div className='form-subsection__large'>
+      { children }
+    </div>
+  )
+}
 
-  &:last-child {
-    margin-right: 0;
-  }
+const FormRow = ({ children }) => {
+  return (
+    <div className='form-row'>
+      { children }
+    </div>
+  )
+}
 
-  @media (max-width: 480px) {
-    margin: 12px 0;
-    margin-top: 0;
-    width: 100%;
+const FormField = ({ children, className }) => {
+  const classes = () => (
+    [
+      'form-field',
+      className
+    ].filter(Boolean).join(' ')
+  )
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-`
-const SmallFormField = styled(FormField)`
-  && {
-    max-width: 50%;
-    flex-shrink: 1;
+  return (
+    <div className={ classes() }>
+      { children }
+    </div>
+  )
+}
 
-    &:last-child {
-      margin-left: 8px;
-    }
-  }
-`
+const SmallFormField = ({ children }) => {
+  return (
+    <FormField className='form-field__small'>
+      { children }
+    </FormField>
+  )
+}
 
 export {
   FormTitle,

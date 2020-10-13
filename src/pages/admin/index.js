@@ -8,7 +8,7 @@ const Admin = () => {
     <Layout home active='admin'>
       <HomeSection>
         <TypographyTitle1>
-          Admin Base Project!
+          Admin Carito Munar!
         </TypographyTitle1>
       </HomeSection>
     </Layout>

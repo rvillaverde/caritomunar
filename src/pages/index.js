@@ -8,7 +8,7 @@ export default function Home() {
     <Layout home active='home'>
       <HomeSection>
         <TypographyTitle1>
-          Welcome to Base Project!
+          Welcome to Carito Munar!
         </TypographyTitle1>
       </HomeSection>
     </Layout>

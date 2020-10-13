@@ -1,0 +1,77 @@
+@import '../../../public/styles/theme';
+
+.button-label {
+  position: relative;
+}
+
+.button__basic {
+  transition: all 0.3s ease-in;
+  outline: none;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  border-style: solid;
+  font-size: 12px;
+  line-height: 12px;
+  font-family: $typography-secondary;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 8px 36px;
+  font-weight: 600;
+  position: relative;
+
+  &:before {
+    transition: all 0.2s ease-in;
+    transform-origin: left center;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.button__primary {
+  color: $color-gray_100;
+  border-width: 0;
+  background-color: $color-primary;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  &:not(:disabled):hover {
+
+  }
+}
+
+.button__secondary {
+  color: $color-gray_100;
+  border-width: 0;
+  background-color: $color-secondary;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  &:not(:disabled):hover {
+
+  }
+}
+
+.button__tertiary {
+  color: $color-gray_100;
+  border-width: 0;
+  background-color: $color-tertiary;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  &:not(:disabled):hover {
+
+  }
+}

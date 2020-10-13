@@ -1,13 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
 import { TypographyBody } from '../theme/typography'
-
-const Input = styled.input`
-  width: 100%;
-  padding: 8px 12px;
-`
-const Label = styled.label`
-`
 
 class FormInput extends React.Component {
   inputRef = React.createRef()
@@ -23,17 +15,21 @@ class FormInput extends React.Component {
   }
 
   render () {
-    const { className, id, name, label, placeholder, type } = this.props
+    const { id, name, label, placeholder, type } = this.props
     return (
       <React.Fragment>
-        <Label>
-          <TypographyBody>
-            { label }
-          </TypographyBody>
-        </Label>
-        <Input
+        {
+          label && (
+            <label>
+              <TypographyBody>
+                { label }
+              </TypographyBody>
+            </label>
+          )
+        }
+        <input
           ref={ this.inputRef }
-          className={ className }
+          className='form-input'
           id={ id }
           name={ name }
           placeholder={ placeholder }

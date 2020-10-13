@@ -3,9 +3,9 @@ import Header from './header.js'
 import Footer from './footer'
 import styled from 'styled-components'
 
-const name = 'Base project'
-const siteTitle = 'Base project'
-const description = "Base project skeleton."
+const name = 'Carito Munar'
+const siteTitle = 'Carito Munar'
+const description = 'Carito Munar'
 
 const Layout = styled.div`
   background-color: white;
@@ -37,7 +37,7 @@ class AppLayout extends React.Component {
           />
           <meta name="og:title" content={ siteTitle } />
           <meta name="og:description" content={ description } />
-          <meta property="og:url" content="https://www.romivillaverde.com" />
+          <meta property="og:url" content="https://www.caritomunar.herokuapp.com" />
           <meta property="og:image" content="/img/icon.png" />
         </Head>
           
