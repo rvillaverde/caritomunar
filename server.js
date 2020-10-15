@@ -14,6 +14,7 @@ const handle = app.getRequestHandler()
 const authRouter = require('./src/app/routes/authRouter.js')
 const userRouter = require('./src/app/routes/userRouter.js')
 const projectRouter = require('./src/app/routes/projectRouter.js')
+const presentationRouter = require('./src/app/routes/presentationRouter.js')
 
 app.prepare().then(() => {
   const server = express()
@@ -29,6 +30,7 @@ app.prepare().then(() => {
   server.use('/api/auth', authRouter)
   server.use('/api/users', userRouter)
   server.use('/api/projects', projectRouter)
+  server.use('/api/presentation', presentationRouter)
 
   server.all('*', (req, res) => {
     return handle(req, res)
