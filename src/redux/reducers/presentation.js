@@ -18,8 +18,8 @@ const presentationReducer = (state = {}, action) => {
     case FETCH_PRESENTATION_SUCCESS:
       return {
         ...state,
-        loading: false,
-        ...action.presentation
+        ...action.presentation,
+        loading: false
       }
 
     case FETCH_PRESENTATION_FAILURE:
@@ -35,7 +35,6 @@ const presentationReducer = (state = {}, action) => {
       }
 
     case UPDATE_PRESENTATION_SUCCESS:
-      console.log('UPDATE_PRESENTATION_SUCCESS', action)
       return {
         ...state,
         loading: false,

@@ -58,11 +58,12 @@ export const fetchPresentation = () => (dispatch) => {
     })
 }
 
-export const updatePresentation = ({ presentation, thumbnail }) => (dispatch) => {
+export const updatePresentation = ({ presentation, photo }) => (dispatch) => {
+  console.log('update presentation', presentation)
   dispatch(updatePresentationRequest())
-  const data = buildFormData({ presentation, thumbnail })
+  const data = buildFormData({ presentation, photo })
 
-  api.updatePresentation(presentation.id, data)
+  api.updatePresentation(data)
     .then(() => {
       dispatch(updatePresentationSuccess(presentation))
     })

@@ -18,7 +18,6 @@ const updatePresentation = (data) => {
     .upload({
       endpoint: `presentation`,
       data,
-      type: 'put'
     })
     .then((res) => res.data)
     .catch(error => {

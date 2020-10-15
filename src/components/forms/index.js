@@ -1,4 +1,4 @@
-import FormInput from './FormInput'
+import FormInput from './formInput/FormInput'
 import './style.scss'
 
 const FormTitle = ({ children }) => {

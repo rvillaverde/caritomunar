@@ -17,8 +17,10 @@ router.get('/', async(req, res) => {
 router.post('/', async(req, res) => {
   const {
     body,
-    files: { photo } = {}
+    files = {}
   } = req
+  const photo = files !== null ? files.photo : undefined
+
   PresentationService.updatePresentation(body, photo)
     .then(presentation => {
       res.status(200).send(presentation)

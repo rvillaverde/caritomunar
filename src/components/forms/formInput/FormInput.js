@@ -1,5 +1,6 @@
 import React from 'react'
-import { TypographyBody } from '../theme/typography'
+import { TypographyBody } from '../../theme/typography'
+import './style.scss'
 
 class FormInput extends React.Component {
   inputRef = React.createRef()
@@ -20,11 +21,9 @@ class FormInput extends React.Component {
       <React.Fragment>
         {
           label && (
-            <label>
-              <TypographyBody>
-                { label }
-              </TypographyBody>
-            </label>
+            <TypographyBody as='label'>
+              { label }
+            </TypographyBody>
           )
         }
         <input

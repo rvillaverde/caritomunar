@@ -1,0 +1,8 @@
+@import '../../../../public/styles/theme';
+
+.form-input {
+  border: 1px solid $color-gray_300;
+  width: 100%;
+  padding: 8px 12px;
+  font-family: $typography-secondary;
+}

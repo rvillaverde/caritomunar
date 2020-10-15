@@ -18,7 +18,13 @@ class PresentationService {
     })
   }
 
-  static updatePresentation = async (presentation) => {
+  static updatePresentation = async (presentation, photo) => {
+    console.log('update presentation', presentation, photo)
+    if (photo) {
+      const uploadedPhoto = await ImageService.uploadImage(photo)
+      presentation.photoUrl = uploadedPhoto.url
+      presentation.photoCdnId = uploadedPhoto.id
+    }
     return new Promise((resolve, reject) => {
       fs.writeFile(
         FILE,

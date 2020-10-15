@@ -7,6 +7,6 @@ const rootReducer = combineReducers({
   auth: authReducer,
   project: projectReducer,
   presentation: presentationReducer
-});
+})
 
-export default rootReducer;
+export default rootReducer
