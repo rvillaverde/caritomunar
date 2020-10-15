@@ -5,6 +5,7 @@ import { PrimaryButton } from '../../buttons'
 import FileDropper from '../../fileDropper/FileDropper'
 import { FormField, FormInput, FormRow, FormColumn } from '../../forms'
 import { TypographyBody } from '../../theme/typography'
+import ImagePreview from '../imagePreview/ImagePreview'
 import './style.scss'
 
 const FIELDS = [
@@ -25,27 +26,6 @@ class ProjectForm extends React.Component {
       'ui-project_form',
       loading && 'loading'
     ].filter(Boolean).join(' ')
-  }
-
-  get thumbnailPreview () {
-    const {
-      thumbnailPreview,
-      project: { thumbnailUrl }
-    } = this.state
-
-    const image = thumbnailPreview ?
-      thumbnailPreview :
-      thumbnailUrl
-
-    return (
-      <div
-        className='admin-project_thumbnail'
-        style={{
-          backgroundImage: `url(${ image })`
-        }}
-      >
-      </div>
-    )
   }
 
   handleChange = (value) => {
@@ -79,7 +59,8 @@ class ProjectForm extends React.Component {
   render () {
     const {
       project,
-      thumbnail
+      thumbnail,
+      thumbnailPreview
     } = this.state
   
     return (
@@ -89,7 +70,10 @@ class ProjectForm extends React.Component {
             <FileDropper onChange={ this.handleThumbnailChange }>
               {
                 thumbnail || project.thumbnailUrl ? (
-                  this.thumbnailPreview
+                  <ImagePreview
+                    preview={thumbnailPreview}
+                    url={project.thumbnailUrl}
+                  />
                 ) : (
                   <TypographyBody>
                     Upload image
@@ -135,4 +119,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm)
-// export default ProjectForm

@@ -5,6 +5,7 @@ import { TypographyTitle1, TypographyTitle3 } from '../../components/theme/typog
 import withAuth from '../../utils/withAuth'
 import ProjectForm from '../../components/admin/projectForm/ProjectForm'
 import Projects from '../../components/admin/projectTable/ProjectTable'
+import Presentation from '../../components/admin/presentation/Presentation'
 // import { getProjects } from '../../api/project'
 
 const Admin = () => {
@@ -14,6 +15,12 @@ const Admin = () => {
         <TypographyTitle1>
           Admin Carito Munar!
         </TypographyTitle1>
+
+        <TypographyTitle3>
+          Home Presentation
+        </TypographyTitle3>
+        <Presentation />
+
         <TypographyTitle3>
           My projects
         </TypographyTitle3>
