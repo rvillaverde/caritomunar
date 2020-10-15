@@ -15,7 +15,7 @@ class FormInput extends React.Component {
   }
 
   render () {
-    const { id, name, label, placeholder, type } = this.props
+    const { id, name, label, placeholder, type, value } = this.props
     return (
       <React.Fragment>
         {
@@ -34,6 +34,7 @@ class FormInput extends React.Component {
           name={ name }
           placeholder={ placeholder }
           type={ type }
+          value={ value }
           onChange={ this.handleChange }
         />
       </React.Fragment>

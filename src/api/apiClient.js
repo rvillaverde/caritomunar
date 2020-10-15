@@ -6,14 +6,14 @@ export default class ApiClient {
     this.httpClient = axios.create({ baseURL })
   }
 
-  delete ({ endpoint, params, options }) {
+  delete ({ endpoint, params, options = {} }) {
     return this.httpClient.delete(endpoint, {
       params,
       ...options,
     })
   }
 
-  get ({ endpoint, params, options }) {
+  get ({ endpoint, params, options = {} }) {
     return this.httpClient.get(endpoint, {
       params,
       ...options,
@@ -28,9 +28,7 @@ export default class ApiClient {
     return this.httpClient.put(endpoint, data, options)
   }
 
-  postUrlencoded ({ endpoint, data, options }) {
-    options = options || {}
-
+  postUrlencoded ({ endpoint, data, options = {} }) {
     return this.httpClient.post(endpoint, data, {
       ...options,
       headers: {
@@ -40,14 +38,20 @@ export default class ApiClient {
     })
   }
 
-  upload ({ endpoint, data, options }) {
-    options = options || {}
+  upload ({ endpoint, data, options = {}, type = 'post' }) {
+    console.log('api client - upload', data)
+    // for (var pair of data.project.entries()) {
+    //   console.log(pair[0]+ ': ' + pair[1])
+    // }
+    const method = type === 'put' ?
+      this.httpClient.put :
+      this.httpClient.post
 
-    return this.httpClient.post(endpoint, data, {
+    return method(endpoint, data, {
       ...options,
       headers: {
-        'Content-Type': 'multipart/form-data',
         ...options.headers,
+        'Content-Type': 'multipart/form-data',
       },
     })
   }

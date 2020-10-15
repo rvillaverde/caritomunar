@@ -9,34 +9,50 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       thumbnailUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // allowNull: false
+      },
+      thumbnailCdnId: {
+        type: Sequelize.STRING,
+        // allowNull: false
+      },
+      show: {
+        type: Sequelize.BOOLEAN
       },
       order: {
         type: Sequelize.INTEGER
       },
       year: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        // allowNull: false
       },
       internalUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // allowNull: false
       },
       url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // allowNull: false
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // allowNull: false
       },
       homeDescription: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // allowNull: false
       },
       goal: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        // allowNull: false
       },
       myRole: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

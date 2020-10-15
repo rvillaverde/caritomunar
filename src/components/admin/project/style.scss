@@ -1,0 +1,17 @@
+@import '../../../../public/styles/theme';
+
+.ui-project_wrapper {
+  &:nth-child(even) {
+    background-color: $color-gray_200;
+  }
+
+  &:nth-child(odd) {
+    background-color: $color-gray_100;
+  }
+}
+
+.ui-project_title {
+  width: 100%;
+  cursor: pointer;
+  padding: 8px;
+}

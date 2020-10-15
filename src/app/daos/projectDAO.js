@@ -38,5 +38,28 @@ module.exports = {
         reject(err)
       })
     })
+  },
+  update: function(id, fields) {
+    return new Promise(async (resolve, reject) => {
+      models.Project.update(
+        fields,
+        { where: { id } }
+      ).then(updated => {
+        resolve(updated[0]);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  },
+  delete: function(id) {
+    return new Promise(async (resolve, reject) => {
+      models.Project.destroy({
+        where: { id }
+      }).then(deleted => {
+        resolve(deleted);
+      }).catch(err => {
+        reject(err);
+      });
+    });
   }
 }

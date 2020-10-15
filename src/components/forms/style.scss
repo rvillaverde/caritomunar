@@ -1,8 +1,10 @@
+@import '../../../public/styles/theme';
+
 .formTitle {
   
 }
 
-.formSection {
+.form-section {
   display: flex;
 
   @media (max-width: 480px) {
@@ -15,23 +17,33 @@
   align-items: center;
   margin: 12px 0;
 
-  @media (max-width: 480px) {
-    flex-wrap: wrap;
+  &:first-child {
+    margin-top: 0;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.form-row > .form-column:not(:first-child) {
+  @media (min-width: 481px) {
+    padding-left: 20px;
+  }
+}
+
+.form-column {
+  align-self: flex-start;
+  width: 50%;
 }
 
 .form-field {
   flex-grow: 1;
-  margin: 0 8px;
   position: relative;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   @media (max-width: 480px) {
     margin: 12px 0;
@@ -73,6 +85,8 @@
 }
 
 .form-input {
+  border: 1px solid $color-gray_300;
   width: 100%;
   padding: 8px 12px;
+  font-family: $typography-secondary;
 }

@@ -13,21 +13,22 @@ const handle = app.getRequestHandler()
 
 const authRouter = require('./src/app/routes/authRouter.js')
 const userRouter = require('./src/app/routes/userRouter.js')
+const projectRouter = require('./src/app/routes/projectRouter.js')
 
 app.prepare().then(() => {
   const server = express()
 
+  server.use(express.static('public'))
   server.use(cors())
-  // server.use(express.json())
-  server.use(fileUpload({
-    createParentPath: true
-  }))
+  server.use(express.json())
+  server.use(fileUpload({ createParentPath: true }))
 
-  server.use(bodyParser.json())
-  server.use(bodyParser.urlencoded({ extended: true }))
+  // server.use(bodyParser.json())
+  // server.use(bodyParser.urlencoded({ extended: true }))
 
   server.use('/api/auth', authRouter)
   server.use('/api/users', userRouter)
+  server.use('/api/projects', projectRouter)
 
   server.all('*', (req, res) => {
     return handle(req, res)

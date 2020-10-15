@@ -1,14 +1,31 @@
-$typography-primary: Montserrat, sans-serif;
-$typography-secondary: Montserrat, sans-serif;
+:root {
+  --color-primary: indigo;
+  --color-secondary: #2FD6E5;
+  --color-tertiary: green;
+  --color-gray_100: #FAFAFA;
+  --color-gray_200: #F0F0F0;
+  --color-gray_300: #E4E6EA;
+  --color-gray_400: #C0C5CE;
+  --color-gray_500: #A7ADBA;
+  --color-gray_600: #65737E;
+  --color-gray_700: #4F5B66;
+  --color-gray_800: #343D46;
 
-$color-primary: indigo;
-$color-secondary: #2FD6E5;
-$color-tertiary: green;
-$color-gray_100: #FCFCFC;
-$color-gray_200: #EDEFF2;
-$color-gray_300: #E4E6EA;
-$color-gray_400: #C0C5CE;
-$color-gray_500: #A7ADBA;
-$color-gray_600: #65737E;
-$color-gray_700: #4F5B66;
-$color-gray_800: #343D46;
+  --typography-primary: Montserrat, sans-serif;
+  --typography-secondary: Montserrat, sans-serif;
+}
+
+$typography-primary: var(--typography-primary);
+$typography-secondary: var(--typography-secondary);
+
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+$color-tertiary: var(--color-tertiary);
+$color-gray_100: var(--color-gray_100);
+$color-gray_200: var(--color-gray_200);
+$color-gray_300: var(--color-gray_300);
+$color-gray_400: var(--color-gray_400);
+$color-gray_500: var(--color-gray_500);
+$color-gray_600: var(--color-gray_600);
+$color-gray_700: var(--color-gray_700);
+$color-gray_800: var(--color-gray_800);

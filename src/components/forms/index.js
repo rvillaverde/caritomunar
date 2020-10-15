@@ -1,4 +1,4 @@
-import FormInput from './formInput'
+import FormInput from './FormInput'
 import './style.scss'
 
 const FormTitle = ({ children }) => {
@@ -41,6 +41,25 @@ const FormRow = ({ children }) => {
   )
 }
 
+const FormColumn = ({ children, className, width }) => {
+  const classes = () => (
+    [
+      'form-column',
+      className
+    ].filter(Boolean).join(' ')
+  )
+
+  const style = {
+    width: width && width < 1 ? `${ width * 100 }%` : `${ width }px`
+  }
+
+  return (
+    <div className={ classes() } style={ style }>
+      { children }
+    </div>
+  )
+}
+
 const FormField = ({ children, className }) => {
   const classes = () => (
     [
@@ -69,6 +88,7 @@ export {
   FormSection,
   FormSubsection,
   FormSubsectionLarge,
+  FormColumn,
   FormRow,
   FormField,
   SmallFormField,
