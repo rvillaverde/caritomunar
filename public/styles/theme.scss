@@ -1,7 +1,10 @@
 :root {
-  --color-primary: indigo;
-  --color-secondary: #2FD6E5;
-  --color-tertiary: green;
+  --color-primary: #EAB6B4;
+  --color-secondary: #EECBBB;
+  --color-tertiary: #ECAF85;
+  --color-gray_dark: #4F4F4F;
+  --color-gray_light: #B2B2B2;
+
   --color-gray_100: #FAFAFA;
   --color-gray_200: #F0F0F0;
   --color-gray_300: #E4E6EA;
@@ -11,8 +14,8 @@
   --color-gray_700: #4F5B66;
   --color-gray_800: #343D46;
 
-  --typography-primary: Montserrat, sans-serif;
-  --typography-secondary: Montserrat, sans-serif;
+  --typography-primary: Rubik, sans-serif;
+  --typography-secondary: Rubik, sans-serif;
 }
 
 $typography-primary: var(--typography-primary);
@@ -21,6 +24,9 @@ $typography-secondary: var(--typography-secondary);
 $color-primary: var(--color-primary);
 $color-secondary: var(--color-secondary);
 $color-tertiary: var(--color-tertiary);
+$color-gray_dark: var(--color-gray_dark);
+$color-gray_light: var(--color-gray_light);
+
 $color-gray_100: var(--color-gray_100);
 $color-gray_200: var(--color-gray_200);
 $color-gray_300: var(--color-gray_300);

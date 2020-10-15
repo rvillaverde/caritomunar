@@ -7,7 +7,11 @@ class AppProvider extends Component {
     sections: [
       { id: 'home', label: 'Home', href: '/', footer: false },
       { id: 'admin', label: 'Admin', href: '/admin', footer: false, private: true },
-    ]
+    ],
+    contact: {
+      email: 'caritomunar@gmail.com',
+      linkedIn: 'www.linkedin.com',
+    }
   }
 
   render () {

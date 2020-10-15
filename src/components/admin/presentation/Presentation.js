@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchPresentation, updatePresentation } from '../../../redux/actions/presentation'
-import { PrimaryButton } from '../../buttons'
+import { SecondaryButton } from '../../buttons'
 import FileDropper from '../../fileDropper/FileDropper'
 import { FormColumn, FormField, FormInput, FormRow } from '../../forms'
 import { TypographyBody } from '../../theme/typography'
@@ -102,9 +102,9 @@ class Presentation extends React.Component {
               }
             </FormColumn>
           </FormRow>
-          <PrimaryButton type='submit'>
+          <SecondaryButton type='submit'>
             Save
-          </PrimaryButton>
+          </SecondaryButton>
         </form>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { TypographyBody, TypographyCaption } from './theme/typography'
+import { TypographyBody, TypographyTitle1, TypographyTitle5 } from './theme/typography'
 import AppContext from './appContext'
 
 class AppFooter extends React.Component {
@@ -14,31 +14,15 @@ class AppFooter extends React.Component {
     return (
       <Footer>
         <FooterInner>
-          <Section>
-          </Section>
-          <Section>
-            <FooterTitle>
-              Menú
-            </FooterTitle>
-            <FooterNavList>
-              {
-                navItems.map((item, i) => (
-                  <FooterNavItem key={i}>
-                    <Link href={item.href} as={item.href}>
-                      <TypographyBody as='a' href={item.href}>
-                        {item.label}
-                      </TypographyBody>
-                    </Link>
-                  </FooterNavItem>
-                ))
-              }
-            </FooterNavList>
-          </Section>
-          <Section>
-            <FooterTitle>
-              Contacto
-            </FooterTitle>
-          </Section>
+          <TypographyTitle5>
+            Get in touch
+          </TypographyTitle5>
+          <TypographyTitle1>
+            Let's work together
+          </TypographyTitle1>
+          <TypographyBody>
+            If you have a website or mobile app idea in mind or you need some advice about product design, feel free to contact me.
+          </TypographyBody>
         </FooterInner>
       </Footer>
     )
@@ -50,55 +34,20 @@ const Footer = styled.footer`
   min-height: 280px;
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: var(--color-secondary);
 `
 const FooterInner = styled.div`
   max-width: ${({ theme }) => theme.viewport};
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
 
   @media (max-width: 459px) {
     flex-direction: column;
-  }
-`
-const Section = styled.div`
-  max-width: 280px;
-
-  &:not(:first-child) {
-    @media (max-width: 459px) {
-      margin-top: 24px;
-
-      &:before {
-        content: '';
-        display: block;
-        height: 1px;
-        width: calc(100% - 96px);
-        margin: 24px auto;
-        margin-top: 0;
-        opacity: 0.4;
-      }
-    }
-    @media (min-width: 460px) {
-      margin-left: 24px;
-    }
-  }
-`
-const FooterTitle = styled(TypographyCaption)`
-  margin-bottom: 24px;
-`
-const FooterNavList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-`
-const FooterNavItem = styled.li`
-  text-transform: uppercase;
-
-  &:not(:first-child) {
-    padding-top: 8px;
   }
 `
 

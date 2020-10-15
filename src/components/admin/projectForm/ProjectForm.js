@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createProject, updateProject } from '../../../redux/actions/project'
-import { PrimaryButton } from '../../buttons'
+import { SecondaryButton } from '../../buttons'
 import FileDropper from '../../fileDropper/FileDropper'
 import { FormField, FormInput, FormRow, FormColumn } from '../../forms'
 import { TypographyBody } from '../../theme/typography'
@@ -98,9 +98,9 @@ class ProjectForm extends React.Component {
             }
           </FormColumn>
         </FormRow>
-        <PrimaryButton type='submit'>
+        <SecondaryButton type='submit'>
           Save
-        </PrimaryButton>
+        </SecondaryButton>
       </form>
     )
   }

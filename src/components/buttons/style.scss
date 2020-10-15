@@ -5,22 +5,23 @@
 }
 
 .button__basic {
-  transition: all 0.3s ease-in;
-  outline: none;
-  min-height: 36px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-width: 2px;
-  border-style: solid;
-  font-size: 12px;
-  line-height: 12px;
-  font-family: $typography-secondary;
   background-color: transparent;
-  text-transform: uppercase;
-  padding: 8px 36px;
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  font-family: $typography-secondary;
+  font-size: 12px;
   font-weight: 600;
+  justify-content: center;
+  line-height: 12px;
+  min-height: 36px;
+  outline: none;
+  padding: 8px 40px;
   position: relative;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
 
   &:before {
     transition: all 0.2s ease-in;
@@ -41,7 +42,7 @@
 }
 
 .button__primary {
-  color: $color-gray_100;
+  color: $color-gray_dark;
   border-width: 0;
   background-color: $color-primary;
   font-weight: 400;
@@ -53,7 +54,7 @@
 }
 
 .button__secondary {
-  color: $color-gray_100;
+  color: $color-gray_dark;
   border-width: 0;
   background-color: $color-secondary;
   font-weight: 400;

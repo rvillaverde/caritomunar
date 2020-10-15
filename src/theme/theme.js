@@ -12,8 +12,8 @@ const theme = {
     gray_800: '#343D46',
   },
   typography: {
-    primary: 'Montserrat, sans-serif',
-    secondary: 'Montserrat, sans-serif',
+    primary: 'Rubik, sans-serif',
+    secondary: 'Rubik, sans-serif',
   },
   header: {
     height: '80px',

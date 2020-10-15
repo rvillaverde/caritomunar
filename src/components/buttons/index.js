@@ -30,3 +30,11 @@ export const PrimaryButton = ({ children, type }) => {
     </BasicButton>
   )
 }
+
+export const SecondaryButton = ({ children, type }) => {
+  return (
+    <BasicButton type={type} className='button__secondary'>
+      { children }
+    </BasicButton>
+  )
+}
