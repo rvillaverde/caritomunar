@@ -32,10 +32,12 @@ class Project extends React.Component {
     return (
       <div className='ui-project_wrapper'>
         <div className='ui-project'>
-          <TypographyBody className='ui-project_title' onClick={this.handleOnClick}>
-            { project ? project.name : 'New project' }
-          </TypographyBody>
-          <FontAwesomeIcon className={ this.chevronClasses } icon={faChevronRight} />
+          <div className='ui-project-title_wrapper' onClick={this.handleOnClick}>
+            <TypographyBody className='ui-project_title'>
+              { project ? project.name : 'New project' }
+            </TypographyBody>
+            <FontAwesomeIcon className={ this.chevronClasses } icon={faChevronRight} />
+          </div>
         </div>
         {
           editing && (

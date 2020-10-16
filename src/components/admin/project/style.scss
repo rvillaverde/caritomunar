@@ -11,21 +11,21 @@
   }
 }
 
+.ui-project-title_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
 .ui-project_title {
   width: 100%;
-  cursor: pointer;
   font-weight: 600;
 }
 
 .ui-project {
   @extend .limit-width;
-}
-
-.ui-project {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
 }
 
 .ui-project_chevron {
