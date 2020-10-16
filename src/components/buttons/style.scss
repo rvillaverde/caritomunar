@@ -13,8 +13,9 @@
   display: flex;
   font-family: $typography-secondary;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   justify-content: center;
+  letter-spacing: 1px;
   line-height: 12px;
   min-height: 36px;
   outline: none;
@@ -43,10 +44,8 @@
 
 .button__primary {
   color: $color-gray_dark;
-  border-width: 0;
+  border-color: $color-primary;
   background-color: $color-primary;
-  font-weight: 400;
-  letter-spacing: 1px;
 
   &:not(:disabled):hover {
 
@@ -55,10 +54,8 @@
 
 .button__secondary {
   color: $color-gray_dark;
-  border-width: 0;
   background-color: $color-secondary;
-  font-weight: 400;
-  letter-spacing: 1px;
+  border-color: $color-secondary;
 
   &:not(:disabled):hover {
 
@@ -66,13 +63,17 @@
 }
 
 .button__tertiary {
-  color: $color-gray_100;
-  border-width: 0;
+  color: $color-gray_dark;
   background-color: $color-tertiary;
-  font-weight: 400;
-  letter-spacing: 1px;
+  border-color: $color-tertiary;
 
   &:not(:disabled):hover {
 
   }
+}
+
+.button__text {
+  color: $color-gray_dark;
+  border-color: transparent;
+  background-color: transparent;
 }

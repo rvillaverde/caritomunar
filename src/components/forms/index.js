@@ -83,6 +83,23 @@ const SmallFormField = ({ children }) => {
   )
 }
 
+const FormFooter = ({ children }) => {
+  return (
+    <div className='form-footer'>
+      { children }
+    </div>
+  )
+}
+
+const FormActions = ({ children }) => {
+  return (
+    <div className='form-actions'>
+      { children }
+    </div>
+  )
+}
+
+
 export {
   FormTitle,
   FormSection,
@@ -90,6 +107,8 @@ export {
   FormSubsectionLarge,
   FormColumn,
   FormRow,
+  FormFooter,
+  FormActions,
   FormField,
   SmallFormField,
   FormInput

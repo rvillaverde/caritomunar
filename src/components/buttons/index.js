@@ -8,7 +8,7 @@ export const ButtonLabel = ({ children }) => {
   )
 }
 
-const BasicButton = ({ children, type, className }) => {
+const BasicButton = ({ children, type, onClick, className }) => {
   const classes = () => (
     [
       'button__basic',
@@ -17,23 +17,31 @@ const BasicButton = ({ children, type, className }) => {
   )
 
   return (
-    <button type={type} className={ classes() }>
+    <button type={type} className={ classes() } onClick={ onClick }>
       { children }
     </button>
   )
 }
 
-export const PrimaryButton = ({ children, type }) => {
+export const PrimaryButton = ({ children, type, onClick }) => {
   return (
-    <BasicButton type={type} className='button__primary'>
+    <BasicButton type={type} className='button__primary' onClick={ onClick }>
       { children }
     </BasicButton>
   )
 }
 
-export const SecondaryButton = ({ children, type }) => {
+export const SecondaryButton = ({ children, type, onClick }) => {
   return (
-    <BasicButton type={type} className='button__secondary'>
+    <BasicButton type={type} className='button__secondary' onClick={ onClick }>
+      { children }
+    </BasicButton>
+  )
+}
+
+export const TextButton = ({ children, type, onClick }) => {
+  return (
+    <BasicButton type={type} className='button__text' onClick={ onClick }>
       { children }
     </BasicButton>
   )

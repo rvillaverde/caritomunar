@@ -1,3 +1,5 @@
+@import '../../../../public/styles/global.scss';
+
 .admin-project_thumbnail {
   width: 100%;
   height: 100%;
@@ -7,9 +9,11 @@
 }
 
 .ui-project_form {
+  @extend .limit-width;
+
   position: relative;
-  padding: 8px;
-  padding-bottom: 16px;
+  padding: 20px;
+  padding-top: 0;
 
   &.loading {
     &::after {

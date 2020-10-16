@@ -1,4 +1,4 @@
-
+@import '../styles/theme';
 
 * {
   box-sizing: border-box;
@@ -8,8 +8,8 @@
 }
 
 *::selection {
-  background-color: indigo;
-  color: white;
+  background-color: $color-secondary;
+  color: $color-gray_dark;
 }
 
 body {
@@ -28,3 +28,13 @@ a {
   text-decoration: none;
 }
 
+.limit-width {
+  max-width: $viewport-width;
+  margin: 0 auto !important;
+}
+
+.admin-section_title {
+  @extend .limit-width;
+
+  padding: 20px;
+}

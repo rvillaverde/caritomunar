@@ -1,4 +1,5 @@
 @import '../../../../public/styles/theme';
+@import '../../../../public/styles/global.scss';
 
 .ui-project_wrapper {
   &:nth-child(even) {
@@ -13,5 +14,26 @@
 .ui-project_title {
   width: 100%;
   cursor: pointer;
-  padding: 8px;
+  font-weight: 600;
+}
+
+.ui-project {
+  @extend .limit-width;
+}
+
+.ui-project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.ui-project_chevron {
+  color: $color-gray_dark;
+  font-size: 12px;
+  transition: all .2s ease-out;
+
+  &.editing {
+    transform: rotate(90deg);
+  }
 }

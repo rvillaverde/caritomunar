@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { TypographyBody } from '../../theme/typography'
 import ProjectForm from '../projectForm/ProjectForm'
 import './style.scss'
@@ -6,6 +8,15 @@ import './style.scss'
 class Project extends React.Component {
   state = {
     editing: false
+  }
+
+  get chevronClasses () {
+    const { editing } = this.state
+  
+    return [
+      'ui-project_chevron',
+      editing && 'editing'
+    ].filter(Boolean).join(' ')
   }
 
   handleOnClick = () => {
@@ -22,8 +33,9 @@ class Project extends React.Component {
       <div className='ui-project_wrapper'>
         <div className='ui-project'>
           <TypographyBody className='ui-project_title' onClick={this.handleOnClick}>
-            { project.name }
+            { project ? project.name : 'New project' }
           </TypographyBody>
+          <FontAwesomeIcon className={ this.chevronClasses } icon={faChevronRight} />
         </div>
         {
           editing && (

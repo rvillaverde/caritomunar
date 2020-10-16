@@ -13,9 +13,14 @@ class Projects extends React.Component {
     const { projects = [] } = this.props
 
     return (
-      projects.map((project, i) => (
-        <Project key={i} project={project} />
-      ))
+      <React.Fragment>
+        {
+          projects.map((project, i) => (
+            <Project key={i} project={project} />
+          ))
+        }
+        <Project />
+      </React.Fragment>
     )
   }
 }

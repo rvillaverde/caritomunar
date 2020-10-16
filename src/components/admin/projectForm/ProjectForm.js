@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createProject, updateProject } from '../../../redux/actions/project'
-import { SecondaryButton } from '../../buttons'
+import { SecondaryButton, TextButton } from '../../buttons'
 import FileDropper from '../../fileDropper/FileDropper'
-import { FormField, FormInput, FormRow, FormColumn } from '../../forms'
-import { TypographyBody } from '../../theme/typography'
+import { FormField, FormInput, FormRow, FormColumn, FormActions, FormFooter } from '../../forms'
+import { TypographyBody, TypographyCaption } from '../../theme/typography'
 import ImagePreview from '../imagePreview/ImagePreview'
 import './style.scss'
 
@@ -54,10 +54,16 @@ class ProjectForm extends React.Component {
     project.id ?
       updateProject({ project, thumbnail }) :
       createProject({ project, thumbnail })
+    this.setState({ hasChanges: false })
+  }
+
+  handleDelete = () => {
+    console.log('delete project')
   }
 
   render () {
     const {
+      hasChanges,
       project,
       thumbnail,
       thumbnailPreview
@@ -98,9 +104,25 @@ class ProjectForm extends React.Component {
             }
           </FormColumn>
         </FormRow>
-        <SecondaryButton type='submit'>
-          Save
-        </SecondaryButton>
+        <FormFooter>
+          {
+            hasChanges &&
+            <TypographyCaption>
+              (*) You have unsaved changes.
+            </TypographyCaption>
+          }
+          <FormActions>
+            {
+              project.id &&
+              <TextButton type='button' onClick={ this.handleDelete }>
+                Delete
+              </TextButton>
+            }
+            <SecondaryButton type='submit'>
+              Save
+            </SecondaryButton>
+          </FormActions>
+        </FormFooter>
       </form>
     )
   }

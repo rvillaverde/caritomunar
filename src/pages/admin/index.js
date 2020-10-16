@@ -1,7 +1,7 @@
 
 import Layout from '../../components/layout'
 import styled from 'styled-components'
-import { TypographyTitle1, TypographyTitle3 } from '../../components/theme/typography'
+import { TypographyTitle1, TypographyTitle2 } from '../../components/theme/typography'
 import withAuth from '../../utils/withAuth'
 import ProjectForm from '../../components/admin/projectForm/ProjectForm'
 import Projects from '../../components/admin/projectTable/ProjectTable'
@@ -11,27 +11,41 @@ import Presentation from '../../components/admin/presentation/Presentation'
 const Admin = () => {
   return (
     <Layout home active='admin'>
-      <HomeSection>
-        <TypographyTitle1>
-          Admin Carito Munar!
-        </TypographyTitle1>
+      <section>
+        <HomeTitle>
+          <TypographyTitle1>
+            Admin Carito Munar!
+          </TypographyTitle1>
+        </HomeTitle>
 
-        <TypographyTitle3>
-          Home Presentation
-        </TypographyTitle3>
+        <HomeTitle>
+          <TypographyTitle2>
+            Home Presentation
+          </TypographyTitle2>
+        </HomeTitle>
         <Presentation />
 
-        <TypographyTitle3>
-          My projects
-        </TypographyTitle3>
+        <HomeTitle>
+          <TypographyTitle2>
+            My projects
+          </TypographyTitle2>
+        </HomeTitle>
         <Projects />
 
-        <TypographyTitle3>
+        {/* <TypographyTitle3>
           Create project
         </TypographyTitle3>
-        <ProjectForm />
-      </HomeSection>
+        <ProjectForm /> */}
+      </section>
     </Layout>
+  )
+}
+
+const HomeTitle = ({ children }) => {
+  return (
+    <div className='admin-section_title'>
+      { children }
+    </div>
   )
 }
 
@@ -42,11 +56,12 @@ const Admin = () => {
 
 
 
-const HomeSection = styled.section`
-  max-width: ${({ theme }) => theme.viewport};
-  margin: 0 auto;
-  padding: 24px 12px;
-`
+// const HomeSection = styled.section`
+//   max-width: ${({ theme }) => theme.viewport};
+//   margin: 0 auto;
+//   padding: 24px 0;
+//   padding-bottom: 0;
+// `
 
 
 export default withAuth(Admin)

@@ -16,6 +16,8 @@
 
   --typography-primary: Rubik, sans-serif;
   --typography-secondary: Rubik, sans-serif;
+
+  --viewport-width: 960px;
 }
 
 $typography-primary: var(--typography-primary);
@@ -35,3 +37,5 @@ $color-gray_500: var(--color-gray_500);
 $color-gray_600: var(--color-gray_600);
 $color-gray_700: var(--color-gray_700);
 $color-gray_800: var(--color-gray_800);
+
+$viewport-width: var(--viewport-width);
